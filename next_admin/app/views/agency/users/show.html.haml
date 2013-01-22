@@ -1,0 +1,42 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @user.name
+%p
+  %b Name kana:
+  = @user.name_kana
+%p
+  %b Email:
+  = @user.email
+%p
+  %b Pw lock flg:
+  = @user.pw_lock_flg
+%p
+  %b Pw lock at:
+  = @user.pw_lock_at
+%p
+  %b Pw lock release at:
+  = @user.pw_lock_release_at
+%p
+  %b Status:
+  = @user.status
+%p
+  %b Country cd:
+  = @user.country_cd
+%p
+  %b Deleted at:
+  = @user.deleted_at
+%p
+  %b Created by:
+  = @user.created_by
+%p
+  %b Updated by:
+  = @user.updated_by
+%p
+  %b Deleted by:
+  = @user.deleted_by
+
+= link_to 'Edit', edit_agency_user_path(@user)
+\|
+= link_to 'Back', agency_users_path

@@ -1,0 +1,27 @@
+%h1 所属代理店一覧
+
+%table
+  %tr
+    %th{:rowspan => "2"} 企業ID
+    %th 企業名
+    %th ステータス
+    %th 登録日
+    %th{:rowspan => "2"}
+    %th{:rowspan => "2"}
+  %tr
+    %th 企業名（フリガナ）
+    %th 利用区分
+    %th 解約日
+
+  - @agencies.each do |agency|
+    %tr
+      %td{:rowspan => "2"}= agency.agency_no
+      %td= agency.name
+      %td= agency.status
+      %td= agency.created_at.strftime("%Y/%m/%d")
+      %td{:rowspan => "2"}= link_to '選択', agency
+      %td{:rowspan => "2"}= link_to '修正', edit_agency_path(agency)
+    %tr
+      %td= agency.name_kana
+      %td= agency.division
+      %td= agency.deleted_at.try(:strftime, ("%Y/%m/%d"))

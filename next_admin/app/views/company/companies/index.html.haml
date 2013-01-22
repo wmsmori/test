@@ -1,0 +1,39 @@
+%h1 Listing companies
+
+%table
+  %tr
+    %th Company no
+    %th Name
+    %th Name kana
+    %th Status
+    %th Open at
+    %th Cancel at
+    %th Stop at
+    %th Resumption at
+    %th Division
+    %th Country cd
+    %th Deleted at
+    %th Created by
+    %th Updated by
+    %th Deleted by
+    %th
+    %th
+
+  - @companies.each do |company|
+    %tr
+      %td= company.company_no
+      %td= company.name
+      %td= company.name_kana
+      %td= company.status
+      %td= company.open_at
+      %td= company.cancel_at
+      %td= company.stop_at
+      %td= company.resumption_at
+      %td= company.division
+      %td= company.country_cd
+      %td= company.deleted_at
+      %td= company.created_by
+      %td= company.updated_by
+      %td= company.deleted_by
+      %td= link_to 'Show', company
+      %td= link_to 'Edit', edit_company_path(company)

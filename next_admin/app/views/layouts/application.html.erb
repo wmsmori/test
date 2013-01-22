@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NextAdmin</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= link_to "sign_out", sign_out_path, method: :delete %>
+<%= "代理店ID:" + @agency.agency_no if @agency %>
+<%= "代理店名:" + @agency.name if @agency %>
+<%= "ログインユーザ:" + @current_user.name if @current_user %>
+<%= @current_user.email if @current_user %>
+
+<%= yield %>
+
+</body>
+</html>

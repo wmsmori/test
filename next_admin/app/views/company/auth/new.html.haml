@@ -1,0 +1,8 @@
+%h1 NextAdmin
+
+= form_tag auth_create_path do
+  = label_tag "e-mail"
+  = text_field_tag 'user[email]'
+  = label_tag "password"
+  = password_field_tag 'user[password]'
+  = submit_tag "ログイン", :class => "btn primary"

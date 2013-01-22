@@ -1,0 +1,37 @@
+%h2 企業一覧
+
+%table
+  %tr
+    %th{:rowspan => "2"}
+    %th{:rowspan => "2"} 企業No.
+    %th 企業名
+    %th{:rowspan => "2"}
+    %th ステータス
+    %th 利用開始日
+    %th 再開日
+  %tr
+    %th 企業名（フリガナ）
+    %th 利用区分
+    %th 利用開始日
+    %th 一時停止日
+
+  - @companies.each do |company|
+    %tr
+      %td{:rowspan => "2"}= link_to '選択', agency_company_path(@agency, company)
+      %td{:rowspan => "2"}= company.company_no
+      %td= company.name
+      %td{:rowspan => "2"}
+      %td= company.status
+      %td= company.open_at.try(:strftime, ("%Y/%m/%d"))
+      %td= company.resumption_at.try(:strftime, ("%Y/%m/%d"))
+    %tr
+      %td= company.name_kana
+      %td= company.division
+      %td= company.cancel_at.try(:strftime, ("%Y/%m/%d"))
+      %td= company.stop_at.try(:strftime, ("%Y/%m/%d"))
+
+%br
+
+= link_to '新規作成', new_agency_company_path
+\|
+= link_to '管理メニューに戻る', @agency

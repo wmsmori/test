@@ -1,0 +1,41 @@
+%h1 代理店ユーザ
+
+%table
+  %tr
+    %th Name
+    %th Name kana
+    %th Email
+    %th Pw lock flg
+    %th Pw lock at
+    %th Pw lock release at
+    %th Status
+    %th Country cd
+    %th Deleted at
+    %th Created by
+    %th Updated by
+    %th Deleted by
+    %th
+    %th
+    %th
+
+  - @users.each do |user|
+    %tr
+      %td= user.name
+      %td= user.name_kana
+      %td= user.email
+      %td= user.pw_lock_flg
+      %td= user.pw_lock_at
+      %td= user.pw_lock_release_at
+      %td= user.status
+      %td= user.country_cd
+      %td= user.deleted_at
+      %td= user.created_by
+      %td= user.updated_by
+      %td= user.deleted_by
+      %td= link_to 'Show', agency_user_path(params[:agency_id], user)
+      %td= link_to 'Edit', edit_agency_user_path(params[:agency_id], user)
+      %td= link_to 'Destroy', agency_user_path(params[:agency_id], user), method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New User', new_agency_user_path

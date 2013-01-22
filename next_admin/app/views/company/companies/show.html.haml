@@ -1,0 +1,53 @@
+%p#notice= notice
+
+%p
+  %b Company no:
+  = @company.company_no
+%p
+  %b Name:
+  = @company.name
+%p
+  %b Name kana:
+  = @company.name_kana
+%p
+  %b Status:
+  = @company.status
+%p
+  %b Open at:
+  = @company.open_at
+%p
+  %b Cancel at:
+  = @company.cancel_at
+%p
+  %b Stop at:
+  = @company.stop_at
+%p
+  %b Resumption at:
+  = @company.resumption_at
+%p
+  %b Division:
+  = @company.division
+%p
+  %b Country cd:
+  = @company.country_cd
+%p
+  %b Deleted at:
+  = @company.deleted_at
+%p
+  %b Created by:
+  = @company.created_by
+%p
+  %b Updated by:
+  = @company.updated_by
+%p
+  %b Deleted by:
+  = @company.deleted_by
+
+= link_to 'Edit', edit_company_path(@company)
+\|
+= link_to 'Back', companies_path
+
+%br
+= link_to 'Listing services', company_use_services_path(params[:id])
+%br
+= link_to 'Listing users', company_users_path(params[:id])

@@ -1,0 +1,43 @@
+%h1 Listing use_services
+
+%table
+  %tr
+    %th Company
+    %th Parent service
+    %th Type
+    %th Service no
+    %th Status
+    %th Open at
+    %th Cancel at
+    %th Stop at
+    %th Resumption at
+    %th Max number
+    %th Max volume
+    %th Deleted at
+    %th Created by
+    %th Updated by
+    %th Deleted by
+    %th
+    %th
+    %th
+
+  - @use_services.each do |use_service|
+    %tr
+      %td= use_service.company
+      %td= use_service.parent_service_id
+      %td= use_service.type
+      %td= use_service.service_no
+      %td= use_service.status
+      %td= use_service.open_at
+      %td= use_service.cancel_at
+      %td= use_service.stop_at
+      %td= use_service.resumption_at
+      %td= use_service.max_number
+      %td= use_service.max_volume
+      %td= use_service.deleted_at
+      %td= use_service.created_by
+      %td= use_service.updated_by
+      %td= use_service.deleted_by
+      %td= link_to 'Show', use_service
+      %td= link_to 'Edit', edit_use_service_path(use_service)
+      %td= link_to 'Destroy', use_service, method: :delete, data: { confirm: 'Are you sure?' }

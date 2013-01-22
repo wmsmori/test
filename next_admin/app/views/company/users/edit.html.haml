@@ -1,0 +1,7 @@
+%h1 Editing user
+
+= render 'form'
+
+= link_to 'Show', company_user_path(params[:company_id], @user)
+\|
+= link_to 'Back', company_users_path

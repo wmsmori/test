@@ -1,0 +1,48 @@
+%p#notice= notice
+
+%p
+  %b Parent service:
+  = @use_service.parent_service_id
+%p
+  %b Type:
+  = @use_service.type
+%p
+  %b Service no:
+  = @use_service.service_no
+%p
+  %b Status:
+  = @use_service.status
+%p
+  %b Open at:
+  = @use_service.open_at
+%p
+  %b Cancel at:
+  = @use_service.cancel_at
+%p
+  %b Stop at:
+  = @use_service.stop_at
+%p
+  %b Resumption at:
+  = @use_service.resumption_at
+%p
+  %b Max number:
+  = @use_service.max_number
+%p
+  %b Max volume:
+  = @use_service.max_volume
+%p
+  %b Deleted at:
+  = @use_service.deleted_at
+%p
+  %b Created by:
+  = @use_service.created_by
+%p
+  %b Updated by:
+  = @use_service.updated_by
+%p
+  %b Deleted by:
+  = @use_service.deleted_by
+
+= link_to 'Edit', edit_agency_company_use_service_path(@agency, params[:company_id], @use_service)
+\|
+= link_to 'Back', agency_company_path(@agency, params[:company_id])

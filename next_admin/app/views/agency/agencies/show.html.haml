@@ -1,0 +1,11 @@
+%p#notice= notice
+
+%h2 管理メニュー
+
+= link_to '●企業管理', agency_companies_path(params[:id])
+%br
+= link_to '●代理店ユーザ管理', agency_users_path(params[:id])
+
+%br
+%br
+= link_to '代理店一覧へ戻る', agencies_path

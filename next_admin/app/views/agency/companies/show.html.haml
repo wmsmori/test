@@ -1,0 +1,101 @@
+%p#notice= notice
+
+%h2 基本情報
+%p
+  %b Company no:
+  = @company.company_no
+%p
+  %b Name:
+  = @company.name
+%p
+  %b Name kana:
+  = @company.name_kana
+%p
+  %b Status:
+  = @company.status
+%p
+  %b Open at:
+  = @company.open_at
+%p
+  %b Cancel at:
+  = @company.cancel_at
+%p
+  %b Stop at:
+  = @company.stop_at
+%p
+  %b Resumption at:
+  = @company.resumption_at
+%p
+  %b Division:
+  = @company.division
+%p
+  %b Country cd:
+  = @company.country_cd
+%p
+  %b Deleted at:
+  = @company.deleted_at
+%p
+  %b Created by:
+  = @company.created_by
+%p
+  %b Updated by:
+  = @company.updated_by
+%p
+  %b Deleted by:
+  = @company.deleted_by
+
+= link_to '修正', edit_agency_company_path(@agency, @company)
+
+%h2 サービス情報
+
+%table
+  %tr
+    %th Parent service id
+    %th Type
+    %th Service no
+    %th Status
+    %th Open at
+    %th Cancel at
+    %th Stop at
+    %th Resumption at
+    %th Max number
+    %th Max volume
+    %th Deleted at
+    %th Created by
+    %th Updated by
+    %th Deleted by
+    %th Created at
+    %th Updated at
+    %th
+    %th
+
+  - @use_services.each do |use_service|
+    %tr
+      %td= use_service.parent_service_id
+      %td= use_service.type
+      %td= use_service.service_no
+      %td= use_service.status
+      %td= use_service.open_at
+      %td= use_service.cancel_at
+      %td= use_service.stop_at
+      %td= use_service.resumption_at
+      %td= use_service.max_number
+      %td= use_service.max_volume
+      %td= use_service.deleted_at
+      %td= use_service.created_by
+      %td= use_service.updated_by
+      %td= use_service.deleted_by
+      %td= use_service.created_at
+      %td= use_service.updated_at
+      %td= link_to '詳細', agency_company_use_service_path(params[:agency_id], params[:id], use_service)
+      %td= link_to '修正', edit_agency_company_use_service_path(params[:agency_id], params[:id], use_service)
+
+%br
+= link_to 'サービス追加', new_agency_company_use_service_path(params[:agency_id], params[:id])
+
+%h2 ユーザ情報
+= link_to '●企業ユーザ一覧', company_users_path(params[:id])
+
+%br
+%br
+= link_to '企業一覧に戻る', agency_companies_path(params[:agency_id])
