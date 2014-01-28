@@ -14,6 +14,9 @@ class User < ActiveRecord::Base
     self.agencies.present?
   end
 
+  def test?
+  end
+
   def company_user?(company)
     CompanyUser.find_by_company_id_and_user_id(company.id, self.id)
   end
