@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   end
 
   def test?
-    #
+    # testtttt
   end
 
   def company_user?(company)
